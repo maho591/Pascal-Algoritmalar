@@ -1,0 +1,38 @@
+Program matristrans;
+var
+     n,i,j,tmp:integer;
+     a: array [1..50,1..50] of integer;
+begin
+write('kaca kac : );
+read(n);
+
+for i:=1 to n do
+begin
+         for j:=1 to n do
+         begin
+                   writeln(i,' , ',j,' : ');
+                   readln(a[i][j]);
+         end;
+end;
+
+for i:=1 to n do
+begin
+         for j:=i+1 to n do
+         begin
+                  tmp:=a[i][j];
+                  a[i][j]:=a[j][i];
+                  a[j][i]:=tmp;
+         end;
+end;
+
+for i:=1 to n do
+begin
+         for j:=1 to n do
+         begin
+                  write(a[i][j],' ');
+         end;
+writeln();
+end;
+
+readln();
+end.
