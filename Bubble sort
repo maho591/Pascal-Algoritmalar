@@ -1,0 +1,33 @@
+Program bubble;
+var
+i,j,n,tmp:integer;
+a: array [1..20] of integer;
+begin
+write('kac haneli:');
+readln(n);
+
+for i:=1 to n do
+begin
+writeln(i,'. sayi:');
+readln(a[i]);
+end;
+
+for i:=1 to n-1 do
+begin
+          for j:=i+1 to n do
+          begin
+                  if (a[i]>a[j]) then
+                  begin
+                  tmp:=a[i];
+                  a[i]:=a[j];
+                  a[j]:=tmp;
+                  end;
+          end;
+end;
+
+for i:=1 to n do
+begin
+write(a[i],' ');
+end;
+readln();
+end.
