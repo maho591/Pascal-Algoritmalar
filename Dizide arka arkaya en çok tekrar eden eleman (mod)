@@ -1,0 +1,39 @@
+Program modalma;
+var
+     i,n,asd,asd2,deger:integer;
+     a:array[1..50] of integer;
+begin
+
+asd:=1;
+asd2:=0;
+deger:=0;
+
+write(' dizi kac haneli:');
+read(n);
+
+for i:=1 to n do
+begin
+         writeln(i,'. terim');
+         readln(a[i]);
+end;
+
+for i:=2 to n do
+begin
+         if (a[i]=a[i-1]) then
+         begin
+         asd:=asd+1;
+         end
+         else
+         begin
+                  if (asd>asd2) then
+                  begin
+                  asd2:=asd;
+                  deger:=a[i-1];
+                  end;
+        asd:=1;
+         end;
+end;
+
+writeln('mod:',deger,' ',asd2,'kez tekrar ediyor.');
+readln();
+end.
