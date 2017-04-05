@@ -1,0 +1,53 @@
+Program ortalama;
+var
+     n,i,j,k,toplam,avg:integer;
+     a: array [1..50] of integer;
+     b: array [1..50] of integer;
+     c: array [1..50] of integer;
+begin
+
+toplam:=0;
+
+write('dizi kac elemanlı');
+read(n);
+
+for i:=1 to n do
+begin
+         writeln(i,'. eleman: ');
+         readln(a[i]);
+end;
+
+for i:=1 to n do
+begin
+         toplam:=toplam+a[i];
+end;
+
+avg:=toplam div n;
+j:=1;
+k:=1;
+
+for i:=1 to n do
+begin
+         if (a[i]>avg) then
+         begin
+         b[j]:=a[i];
+         j:=j+1;
+         end
+         else
+         begin
+         c[k]:=a[i];
+         k:=k+1
+         end;
+end;
+
+for i:=1 to j-1 do
+begin
+write(b[i],' ');
+end;
+writeln();
+for i:=1 to k-1 do
+begin
+write(c[i],' ');
+end;
+readln();
+end.
