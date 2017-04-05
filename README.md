@@ -1,0 +1,2 @@
+# Pascal-Algoritmalar
+Pascal
