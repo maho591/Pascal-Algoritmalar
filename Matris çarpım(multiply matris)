@@ -1,0 +1,53 @@
+Program matris;
+var
+     i,n,j,k:integer;
+     a: array [1..10,1..10] of integer;
+     b: array [1..10,1..10] of integer;
+     c: array [1..10,1..10] of integer;
+begin
+
+write('matrisler kaca kac');
+readln(n);
+
+for i:=1 to n do
+begin
+         for j:=1 to n do
+         begin
+                   writeln('a', i, j);
+                   readln(a[i][j]);
+         end;
+end;
+
+for i:=1 to n do
+begin
+         for j:=1 to n do
+         begin
+                   writeln('b', i, j);
+                   readln(b[i][j]);
+         end;
+end;
+
+for i:=1 to n do
+begin
+         for j:=1 to n do
+         begin
+                  c[i][j]:=0;
+                  for k:=1 to n do
+                  begin
+                            c[i][j]:=c[i][j]+a[i][k]*b[k][j];
+                  end;
+         end;
+end;
+
+writeln('========================');
+
+for i:=1 to n do
+begin
+         for j:=1 to n do
+         begin 
+                  write(c[i][j],' ');
+         end;
+         writeln();
+end;
+readln();
+end.
