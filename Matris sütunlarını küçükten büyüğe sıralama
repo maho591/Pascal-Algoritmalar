@@ -1,0 +1,42 @@
+Program matrissutun;
+var
+     n,i,j,k,tmp:integer;
+     a: array [1..50,1..50] of integer;
+begin
+write('kaca kac:');
+read(n);
+
+for i:=1 to n do
+begin 
+         for j:=1 to n do
+         begin
+                   writeln(i,' , ',j,' : ');
+                   readln(a[i][j]);
+         end;
+end;
+
+for j:=1 to n do
+begin
+         for k:=1 to n-1 do
+         begin
+                  for i:=1 to n-1 do
+                  begin
+                           if (a[i][j]>a[i+1][j]) then
+                           begin
+                           tmp:=a[i][j];
+                           a[i][j]:=a[i+1][j];
+                           a[i+1][j]:=tmp;
+                           end;
+                  end;
+         end;
+end;
+
+for i:=1 to n do
+begin
+         for j:=1 to n do
+         begin
+                  write(a[i][j],' ');
+         end;
+writeln();
+end;
+end.
