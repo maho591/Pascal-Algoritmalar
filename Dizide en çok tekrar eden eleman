@@ -1,0 +1,49 @@
+Program dizitekrari;
+var
+     n,i,j,k,tekrar,nn,maxt,deger:integer;
+     a: array [1..100] of integer;
+begin
+
+tekrar:=1;
+nn:=0;
+maxt:=0;
+deger:=0;
+
+write('dizi kac elemanli:');
+read(n);
+
+for i:=1 to n do
+begin
+         writeln(i,'. eleman: ');
+         readln(a[i]);
+end;
+
+for i:=1 to n do
+begin
+         for j:=1 to i-1 do
+         begin
+                  if (a[i]=a[j]) then
+                  begin
+                           nn:=nn+1;
+                  end;
+         end;
+         if (nn=0) then
+         begin
+                  for k:=i+1 to n do
+                  begin
+                           if (a[k]=a[i]) then
+                           begin
+                                    tekrar:=tekrar+1;
+                           end;
+                  end;
+                  if (tekrar>maxt) then
+                  begin
+                           maxt:=tekrar;
+                           deger:=a[i];
+                  end;
+                  tekrar:=1;
+         end;
+end;
+
+writeln('en cok ',deger,' sayisi ',maxt,' kez tekrar etmis.');
+end.
