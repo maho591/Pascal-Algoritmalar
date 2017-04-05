@@ -1,0 +1,47 @@
+program quicksort;
+
+Procedure QuickSort (sol, sag : LongInt );
+
+Var 
+  n,i,j,orta,tmp:integer;
+  a: array [1..100] of integer;
+  i,j
+Begin
+  write('dizi kac elemanlı olacak:');
+  read(n);
+
+for i:=1 to n do
+begin
+  writeln(i,'. Eleman:');
+  readln(a[i]);
+end;
+
+i:=1;
+j:=n;
+orta:=(n+1) div 2;
+
+
+Repeat
+    While orta > a[i] Do
+    begin
+      i:=i+1;
+    end;
+    While orta < a[j] Do
+    begin
+      j:=j-1;
+    end;
+    If i<=j Then
+    Begin
+      tmp:=a[i];
+      a[i]:=a[j];
+      a[j]:=tmp;
+      j:=j-1;
+      i:=i+1;
+    End;
+  Until i>j;
+
+for i:=1 to n do
+Begin
+  Write(a[i],' ');
+End;
+End.
